@@ -52,7 +52,7 @@ const TimeZoneMap = () => {
         setTimezonesInRange(filteredTimezones);
     }, [range]);
 
-    console.log('hoverTimezone', hoverTimezone);
+
   return (
     <div style={{width: "700px", height: "100%", margin:"16px auto", display: "flex", flexDirection: "column", gap: 24, alignItems: 'center'}}>
       <Map setHoverTimezone={setHoverTimezone} timezonesInRange={timezonesInRange} />
@@ -62,7 +62,9 @@ const TimeZoneMap = () => {
             <p>From: {range[0]}</p>
             <p>To: {range[1]}</p>
         </div>
-        <div style={{width: "100%", display: "flex",gap:8,  alignItems: 'center'}}>
+        <div style={{width: "100%", display: "flex", gap: 8, alignItems: 'center'}}>
+            <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">Badge</span>
+
             <button onClick={() => setRangeFromPreset(QuickFilters.Morning)}>Morning</button>
             <button onClick={() => setRangeFromPreset(QuickFilters.Afternoon)}>Afternoon</button>
             <button onClick={() => setRangeFromPreset(QuickFilters.BusinessHours)}>Tutta la jornatta</button>
